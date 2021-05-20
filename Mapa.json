@@ -1,0 +1,427 @@
+{
+    "ciudad": "Tegucigalpa",
+    "colonias": [
+        {
+            "nombre": "Cerro Grande",
+            "adyacentes": [
+                {
+                    "nombre": "La Laguna",
+                    "distancia": 3.1
+                },
+                {
+                    "nombre": "El Centro",
+                    "distancia": 4.0
+                }
+            ]
+        },
+        {
+            "nombre": "La Laguna",
+            "adyacentes": [
+                {
+                    "nombre": "Cerro Grande",
+                    "distancia": 3.1
+                },
+                {
+                    "nombre": "Santa Fe",
+                    "distancia": 1.4
+                },
+                {
+                    "nombre": "El Carrizal",
+                    "distancia": 1.2
+                }
+            ]
+        },
+        {
+            "nombre": "El Carrizal",
+            "adyacentes": [
+                {
+                    "nombre": "La Laguna",
+                    "distancia": 1.2
+                },
+                {
+                    "nombre": "Centro America",
+                    "distancia": 1.8
+                }
+            ]
+        },
+        {
+            "nombre": "Santa Fe",
+            "adyacentes": [
+                {
+                    "nombre": "La Laguna",
+                    "distancia": 1.4
+                },
+                {
+                    "nombre": "Centro America",
+                    "distancia": 3.2
+                },
+                {
+                    "nombre": "Concepcion",
+                    "distancia": 2.2
+                }
+            ]
+        },
+        {
+            "nombre": "Centro America",
+            "adyacentes": [
+                {
+                    "nombre": "El Carrizal",
+                    "distancia": 1.8
+                },
+                {
+                    "nombre": "Santa Fe",
+                    "distancia": 3.2
+                },
+                {
+                    "nombre": "Concepcion",
+                    "distancia": 4.0
+                },
+                {
+                    "nombre": "Tiloarque",
+                    "distancia": 3.1
+                }
+            ]
+        },
+        {
+            "nombre": "El Centro",
+            "adyacentes": [
+                {
+                    "nombre": "Cerro Grande",
+                    "distancia": 4.0
+                },
+                {
+                    "nombre": "Concepcion",
+                    "distancia": 2.1
+                },
+                {
+                    "nombre": "Morazan",
+                    "distancia": 2.3
+                },
+                {
+                    "nombre": "San Felipe",
+                    "distancia": 2.7
+                }
+            ]
+        },
+        {
+            "nombre": "Concepcion",
+            "adyacentes": [
+                {
+                    "nombre": "Morazan",
+                    "distancia": 2.3
+                },
+                {
+                    "nombre": "El Centro",
+                    "distancia": 2.1
+                },
+                {
+                    "nombre": "Centro America",
+                    "distancia": 4.0
+                },
+                {
+                    "nombre": "El Prado",
+                    "distancia": 1.3
+                },
+                {
+                    "nombre": "Santa Fe",
+                    "distancia": 2.2
+                }
+            ]
+        },
+        {
+            "nombre": "Morazan",
+            "adyacentes": [
+                {
+                    "nombre": "El Centro",
+                    "distancia": 2.3
+                },
+                {
+                    "nombre": "San Felipe",
+                    "distancia": 2.1
+                },
+                {
+                    "nombre": "Miramontes",
+                    "distancia": 2.0
+                },
+                {
+                    "nombre": "Concepcion",
+                    "distancia": 2.3
+                }
+            ]
+        },
+        {
+            "nombre": "San Felipe",
+            "adyacentes": [
+                {
+                    "nombre": "21 de Octubre",
+                    "distancia": 1.6
+                },
+                {
+                    "nombre": "El Centro",
+                    "distancia": 2.7
+                },
+                {
+                    "nombre": "Morazan",
+                    "distancia": 2.1
+                },
+                {
+                    "nombre": "Lomas del Guijarro",
+                    "distancia": 1.5
+                }
+            ]
+        },
+        {
+            "nombre": "21 de Octubre",
+            "adyacentes": [
+                {
+                    "nombre": "San Felipe",
+                    "distancia": 1.6
+                },
+                {
+                    "nombre": "San Miguel",
+                    "distancia": 2.0
+                }
+            ]
+        },
+        {
+            "nombre": "San Miguel",
+            "adyacentes": [
+                {
+                    "nombre": "21 de Octubre",
+                    "distancia": 2.0
+                },
+                {
+                    "nombre": "Florencia Sur",
+                    "distancia": 4.0
+                }
+            ]
+        },
+        {
+            "nombre": "Lomas del Guijarro",
+            "adyacentes": [
+                {
+                    "nombre": "San Felipe",
+                    "distancia": 1.5
+                },
+                {
+                    "nombre": "Miramontes",
+                    "distancia": 2.3
+                },
+                {
+                    "nombre": "Florencia Sur",
+                    "distancia": 3.5
+                }
+            ]
+        },
+        {
+            "nombre": "Florencia Sur",
+            "adyacentes": [
+                {
+                    "nombre": "San Miguel",
+                    "distancia": 4.0
+                },
+                {
+                    "nombre": "Lomas del Guijarro",
+                    "distancia": 3.5
+                },
+                {
+                    "nombre": "Miramontes",
+                    "distancia": 3.0
+                },
+                {
+                    "nombre": "El Hato",
+                    "distancia": 1.8
+                }
+            ]
+        },
+        {
+            "nombre": "El Hato",
+            "adyacentes": [
+                {
+                    "nombre": "Florencia Sur",
+                    "distancia": 1.8
+                },
+                {
+                    "nombre": "Miraflores",
+                    "distancia": 3.0
+                },
+                {
+                    "nombre": "Kennedy",
+                    "distancia": 3.1
+                }
+            ]
+        },
+        {
+            "nombre": "Kennedy",
+            "adyacentes": [
+                {
+                    "nombre": "El Hato",
+                    "distancia": 3.1
+                },
+                {
+                    "nombre": "Miraflores",
+                    "distancia": 2.0
+                },
+                {
+                    "nombre": "Aleman",
+                    "distancia": 3.0
+                }
+            ]
+        },
+        {
+            "nombre": "Miraflores",
+            "adyacentes": [
+                {
+                    "nombre": "Miramontes",
+                    "distancia": 3.5
+                },
+                {
+                    "nombre": "Kennedy",
+                    "distancia": 2.0
+                },
+                {
+                    "nombre": "El Hato",
+                    "distancia": 3.5
+                },
+                {
+                    "nombre": "Aleman",
+                    "distancia": 4.0
+                },
+                {
+                    "nombre": "Col. San Jose del Pedregal",
+                    "distancia": 4.0
+                },
+                {
+                    "nombre": "Tiloarque",
+                    "distancia": 3.4
+                },
+                {
+                    "nombre": "El Prado",
+                    "distancia": 2.7
+                }
+            ]
+        },
+        {
+            "nombre": "Aleman",
+            "adyacentes": [
+                {
+                    "nombre": "Kennedy",
+                    "distancia": 3.0
+                },
+                {
+                    "nombre": "Miraflores",
+                    "distancia": 4.0
+                },
+                {
+                    "nombre": "Col. San Jose del Pedregal",
+                    "distancia": 2.3
+                }
+            ]
+        },
+        {
+            "nombre": "Col. San Jose del Pedregal",
+            "adyacentes": [
+                {
+                    "nombre": "Aleman",
+                    "distancia": 2.3
+                },
+                {
+                    "nombre": "Col. 15 de Septiembre",
+                    "distancia": 2.4
+                },
+                {
+                    "nombre": "Tiloarque",
+                    "distancia": 1.8
+                },
+                {
+                    "nombre": "Miraflores",
+                    "distancia": 4.0
+                }
+            ]
+        },
+        {
+            "nombre": "Col. 15 de Septiembre",
+            "adyacentes": [
+                {
+                    "nombre": "Col. San Jose del Pedregal",
+                    "distancia": 2.4
+                },
+                {
+                    "nombre": "Tiloarque",
+                    "distancia": 3.0
+                }
+            ]
+        },
+        {
+            "nombre": "Tiloarque",
+            "adyacentes": [
+                {
+                    "nombre": "Col. San Jose del Pedregal",
+                    "distancia": 1.8
+                },
+                {
+                    "nombre": "Col. 15 de Septiembre",
+                    "distancia": 3.0
+                },
+                {
+                    "nombre": "El Prado",
+                    "distancia": 2.2
+                },
+                {
+                    "nombre": "Miraflores",
+                    "distancia": 3.4
+                },
+                {
+                    "nombre": "Centro America",
+                    "distancia": 3.1
+                }
+            ]
+        },
+        {
+            "nombre": "El Prado",
+            "adyacentes": [
+                {
+                    "nombre": "Concepcion",
+                    "distancia": 1.3
+                },
+                {
+                    "nombre": "Miramontes",
+                    "distancia": 0.75
+                },
+                {
+                    "nombre": "Tiloarque",
+                    "distancia": 2.2
+                },
+                {
+                    "nombre": "Miraflores",
+                    "distancia": 2.7
+                }
+            ]
+        },
+        {
+            "nombre": "Miramontes",
+            "adyacentes": [
+                {
+                    "nombre": "Lomas del Guijarro",
+                    "distancia": 2.3
+                },
+                {
+                    "nombre": "Morazan",
+                    "distancia": 2.0
+                },
+                {
+                    "nombre": "El Prado",
+                    "distancia": 0.75
+                },
+                {
+                    "nombre": "Miraflores",
+                    "distancia": 3.5
+                },
+                {
+                    "nombre": "Florencia Sur",
+                    "distancia": 3.0
+                }
+            ]
+        }
+    ]
+}
