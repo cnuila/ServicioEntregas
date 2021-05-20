@@ -1,37 +1,37 @@
 class PriotityQueue:    
 
     def __init__(self):
-        self.queue = []
+        self.__queue = []
 
     def estaVacia(self):
-        return len(self.queue) == 0
+        return len(self.__queue) == 0
 
-    def insertar(self, nodo):
-        costoNodo = nodo.getCostoCamino()
+    def insertar(self, nodoInsertar):
+        costoNodo = nodoInsertar.getCostoCamino()
         indice = -1
-        for elemento in self.queue:
-            if elemento.getCostoCamino() <= costoNodo:
+        for nodo in self.__queue:
+            if nodo.getCostoCamino() <= costoNodo:
                 indice+=1
             else:
                 break
         if indice == -1:
-            self.queue.insert(0,nodo)
+            self.__queue.insert(0,nodoInsertar)
         else:
-            self.queue.insert(indice,nodo)
+            self.__queue.insert(indice,nodoInsertar)
     
     def pop(self):
-        del self.queue[0]
+        del self.__queue[0]
 
+    #función que busca si un estado ya se encuentra dentro de la priority queue y retorna el indice
     def seEncuentra(self, nodoBuscar):
-        for nodo in self.queue:
-            if nodoBuscar == nodo:
-                return True
-        return False
-
-    def intercambiarMejorEstado(self, nodoBuscar):
-        indice = 0
-        for nodo in self.queue:
+        for i, nodo in enumerate(self.__queue):
             if nodoBuscar.getEstado() == nodo.getEstado():
-                if nodoBuscar.getCostoCamino() < nodo.getCostoCamino():
-                    self.queue[indice] = nodoBuscar
-            indice+=1
+                return i
+        return -1
+
+    #función que intercambia el nodo, si el nodo recibido tiene un menor costo
+    def intercambiarMejorEstado(self, nodoComparar, indice):
+        nodoActual = self.__queue[indice]
+        if nodoActual.getCostoCamino() > nodoComparar.getCostoCamino():
+            del self.__queue[indice]
+            self.insertar(nodoComparar)

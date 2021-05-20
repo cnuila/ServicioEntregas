@@ -14,16 +14,17 @@ class Entrega:
     def cargarMapa(nombreArchivo):
         pass
 
+    #función que retorna el nodo inicial de la busqueda
     def nodoInicial(self):
         coloniaInicial = self.__ciudad.getColonia(self.__coloniaInicial)
         return NodoBusqueda(Estado(coloniaInicial, self.__lugaresEntregas),None,self.__coloniaInicial,0)
 
     def hacerNodoHijo(self, padre, ruta, costoRuta):
-        colonia = self.__ciudad.getColonia(ruta)
+        nuevaColonia = self.__ciudad.getColonia(ruta)
         coloniasFaltantes = padre.getEstado().nuevasColoniasFaltantes(ruta)
         nuevoCosto = padre.getCostoCamino() + costoRuta
         nuevaAccion = padre.getEstado().getNombreColoniaEstado() + "->" + ruta
-        return NodoBusqueda(Estado(colonia,coloniasFaltantes),padre,nuevaAccion,nuevoCosto)
+        return NodoBusqueda(Estado(nuevaColonia,coloniasFaltantes),padre,nuevaAccion,nuevoCosto)
     
     def seEncuentraExplorados(self, explorados, estadoBuscar):
         for estado in explorados:
@@ -44,9 +45,11 @@ class Entrega:
                 return True #hacer algo solution
             explorados.add(nodo.getEstado())
             coloniaActual = nodo.getEstado().getColoniaEstado()
+            #las rutas adyacentes son las acciones validas por lo tanto se itera através de ellas
             for ruta in coloniaActual.getRutas().keys():                
                 nodoHijo = self.hacerNodoHijo(nodo,ruta,coloniaActual.getRutas()[ruta])
-                if (not self.seEncuentraExplorados(explorados, nodoHijo.getEstado())) or (not frontera.seEncuentra(nodoHijo)):
+                seEncuentraFrontera = frontera.seEncuentra(nodoHijo)
+                if (not self.seEncuentraExplorados(explorados, nodoHijo.getEstado())) or (seEncuentraFrontera == -1):
                     frontera.insertar(nodoHijo)
-                else: 
-                    frontera.intercambiarMejorEstado(nodoHijo)
+                elif seEncuentraFrontera != -1:                     
+                    frontera.intercambiarMejorEstado(nodoHijo,seEncuentraFrontera)
