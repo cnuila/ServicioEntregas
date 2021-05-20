@@ -15,8 +15,21 @@ class Entrega:
         pass
 
     def nodoInicial(self):
-        coloniaInicial = self.__ciudad.coloniaInicial(self.__coloniaInicial)
+        coloniaInicial = self.__ciudad.getColonia(self.__coloniaInicial)
         return NodoBusqueda(Estado(coloniaInicial, self.__lugaresEntregas),None,self.__coloniaInicial,0)
+
+    def hacerNodoHijo(self, padre, ruta, costoRuta):
+        colonia = self.__ciudad.getColonia(ruta)
+        coloniasFaltantes = padre.getEstado().nuevasColoniasFaltantes(ruta)
+        nuevoCosto = padre.getCostoCamino() + costoRuta
+        nuevaAccion = padre.getEstado().getNombreColoniaEstado() + "->" + ruta
+        return NodoBusqueda(Estado(colonia,coloniasFaltantes),padre,nuevaAccion,nuevoCosto)
+    
+    def seEncuentraExplorados(self, explorados, estadoBuscar):
+        for estado in explorados:
+            if estado == estadoBuscar:
+                return True
+        return False
 
     def uniformCostSearch(self):
         nodo = self.nodoInicial()
@@ -26,10 +39,14 @@ class Entrega:
         while True:
             if frontera.estaVacia():
                 return False #hacer algo failure
-            if nodo.getEstado.esEstadoMeta(self.__coloniaInicial):
+            nodo = frontera.pop()
+            if nodo.getEstado().esEstadoMeta(self.__coloniaInicial):
                 return True #hacer algo solution
-            explorados.add(nodo.getEstado)
-            colonia = nodo.getEstado.getColoniaEstado()
-            for ruta in colonia.getRutas().keys():
-                #child node buscar colonia en la ciudad
-                pass
+            explorados.add(nodo.getEstado())
+            coloniaActual = nodo.getEstado().getColoniaEstado()
+            for ruta in coloniaActual.getRutas().keys():                
+                nodoHijo = self.hacerNodoHijo(nodo,ruta,coloniaActual.getRutas()[ruta])
+                if (not self.seEncuentraExplorados(explorados, nodoHijo.getEstado())) or (not frontera.seEncuentra(nodoHijo)):
+                    frontera.insertar(nodoHijo)
+                else: 
+                    frontera.intercambiarMejorEstado(nodoHijo)

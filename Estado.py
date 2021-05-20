@@ -14,3 +14,13 @@ class Estado():
 
     def getColoniaEstado(self):
         return self.__coloniaEstado
+
+    def getNombreColoniaEstado(self):
+        return self.__coloniaEstado.getNombre()
+    
+    def nuevasColoniasFaltantes(self, coloniaRemover):
+        nuevaLista = []
+        for colonia in self.__listaColoniasFaltantes:
+            if coloniaRemover != colonia:
+                nuevaLista.append(colonia)
+        return nuevaLista
