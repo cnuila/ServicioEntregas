@@ -1,5 +1,5 @@
 class NodoBusqueda:
-    
+
     __estado = None
     __padre = None
     __accion = None
@@ -10,3 +10,9 @@ class NodoBusqueda:
         self.__padre = padre
         self.__accion = accion
         self.__costoCamino = costoCamino    
+
+    def getCostoCamino(self):
+        return self.__costoCamino
+
+    def getEstado(self):
+        return self.__estado
