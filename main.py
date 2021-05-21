@@ -35,12 +35,13 @@ def main():
     servicioEntregas = crearEntrega()
     servicioEntregas.cargarMapa(sys.argv[1])
     print("Se cargo el mapa correctamente.")
-    
+
     opcion = 0
     while opcion != 4:        
         opcion = menu()
-        if opcion == 1:
-            print("Ya hable")
+        if opcion == 2:
+            servicioEntregas.uniformCostSearch()
+            
 
 if __name__ == "__main__":
     main()

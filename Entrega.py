@@ -28,7 +28,7 @@ class Entrega:
         #se crea la ciudad
         city = Ciudad(obj["ciudad"])        
         for i in range(len(listaColonias)):
-            city.getColonias().append(Colonia.cargarColonia(listaColonias[i]))
+            city.addColonia(Colonia.cargarColonia(listaColonias[i]))
             
 
     #función que retorna el nodo inicial de la busqueda

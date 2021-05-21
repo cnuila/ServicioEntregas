@@ -10,6 +10,7 @@ class Ciudad:
         for colonia in self.__colonias:
             if colonia.getNombre() == nombreColonia:
                 return colonia
+
+    def addColonia(self, colonia):
+        self.__colonias.append(colonia)
     
-    def getColonias(self):
-        return self.__colonias
