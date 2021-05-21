@@ -21,6 +21,4 @@ class Colonia:
             nombreAdj = colAdj["nombre"]
             distancia = colAdj["distancia"]
             rutas[nombreAdj] = distancia
-        print("Se creo la colonia: ", nombre, "\n con su diccionario: ", rutas)
-        print(rutas)
         return Colonia(nombre, rutas)

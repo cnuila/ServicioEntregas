@@ -9,26 +9,29 @@ from queue import Queue
 
 class Entrega:
 
-    def __init__(self):
-        self.__ciudad = None
-        self.__coloniaInicial = ""
-        self.__lugaresEntregas = []
-        self.__costoMaximo = 0
+    __coloniaInicial = ""
+    __lugaresEntregas = []
+    __costoMaximo = 0.0
 
-    def cargarMapa(self, nombreArchivo):
+    def __init__(self, coloniaInicial, lugaresEntregas, costoMaximo):
+        self.__ciudad = None
+        self.__coloniaInicial = coloniaInicial
+        self.__lugaresEntregas = lugaresEntregas
+        self.__costoMaximo = costoMaximo
+
+    def cargarMapa(self,nombreArchivo):
         # read file
         myJsonFile = open(nombreArchivo, 'r')
-        JsonData = myJsonFile.read()
+        jsonData = myJsonFile.read()
         # parse
-        obj = json.loads(JsonData)
+        obj = json.loads(jsonData)
         listaColonias = obj['colonias']
 
-        # se crea la ciudad
-        city = Ciudad(obj["ciudad"])
-
+        #se crea la ciudad
+        city = Ciudad(obj["ciudad"])        
         for i in range(len(listaColonias)):
-            city.getColonias().append(Colonia.cargarColonias(listaColonias[i]))
-        self.__ciudad = city
+            city.addColonia(Colonia.cargarColonia(listaColonias[i]))
+            
 
     # función que retorna el nodo inicial de la busqueda
     def nodoInicial(self):
