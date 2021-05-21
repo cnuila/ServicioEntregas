@@ -1,8 +1,9 @@
-from ServicioEntregas.PriorityQueue import PriotityQueue
-from ServicioEntregas.Ciudad import Ciudad
-from ServicioEntregas.NodoBusqueda import NodoBusqueda
-from ServicioEntregas.Estado import Estado
-
+from Colonia import Colonia
+from PriorityQueue import PriotityQueue
+from Ciudad import Ciudad
+from NodoBusqueda import NodoBusqueda
+from Estado import Estado
+import json
 class Entrega:
 
     def __init__(self):
@@ -12,7 +13,19 @@ class Entrega:
         self.__costoMaximo = 0
 
     def cargarMapa(nombreArchivo):
-        pass
+        # read file
+        myJsonFile = open(nombreArchivo, 'r')
+        JsonData = myJsonFile.read()
+        # parse
+        obj = json.loads(JsonData)
+        listaColonias = obj['colonias']
+
+        #se crea la ciudad
+        city = Ciudad(obj["ciudad"])
+        
+        for i in range(len(listaColonias)):
+            city.getColonias().append(Colonia.cargarColonias(listaColonias[i]))
+            
 
     #función que retorna el nodo inicial de la busqueda
     def nodoInicial(self):
@@ -53,3 +66,7 @@ class Entrega:
                     frontera.insertar(nodoHijo)
                 elif seEncuentraFrontera != -1:                     
                     frontera.intercambiarMejorEstado(nodoHijo,seEncuentraFrontera)
+    
+    def BFS(self):
+        pass
+
