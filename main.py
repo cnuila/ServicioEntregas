@@ -39,6 +39,8 @@ def main():
     opcion = 0
     while opcion != 4:        
         opcion = menu()
+        if opcion == 1:
+            servicioEntregas.BFS()
         if opcion == 2:
             servicioEntregas.uniformCostSearch()
             

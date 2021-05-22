@@ -66,8 +66,7 @@ class Entrega:
             coloniaActual = nodo.getEstado().getColoniaEstado()
             # las rutas adyacentes son las acciones validas por lo tanto se itera através de ellas
             for ruta in coloniaActual.getRutas().keys():
-                nodoHijo = self.hacerNodoHijo(
-                    nodo, ruta, coloniaActual.getRutas()[ruta])
+                nodoHijo = self.hacerNodoHijo(nodo, ruta, coloniaActual.getRutas()[ruta])
                 seEncuentraFrontera = frontera.seEncuentra(nodoHijo)
                 if (not self.seEncuentraExplorados(explorados, nodoHijo.getEstado())) or (seEncuentraFrontera == -1):
                     frontera.insertar(nodoHijo)
@@ -76,4 +75,29 @@ class Entrega:
                         nodoHijo, seEncuentraFrontera)
 
     def BFS(self):
-        pass
+        visited = {}
+        bfsOutput = []
+        frontera = Queue()
+        listaColonias = self.__ciudad.getColonias()
+
+        for node in listaColonias:
+            visited[node.getNombre()] = False
+
+        nodo = self.nodoInicial()
+        
+
+        while True:
+            if frontera.empty:
+                return False
+            nodo = frontera.get() # frontera.get() va a retornar el primer elemento en la queue
+            NombreNodo = nodo.getEstado().getNombreColoniaEstado() # toma el nombre del nodo
+            visited[NombreNodo] = True # marca el nodo como visitado
+            bfsOutput.append(NombreNodo)
+            colActual = nodo.getEstado().getColoniaestado()
+            adyacentes = colActual.getRutas().keys()
+            for v in adyacentes:
+                nodoHijo = self.hacerNodoHijo(nodo,v,colActual)
+                if not visited[v]:
+                    visited[v] = True
+                    frontera.put(nodoHijo)
+            print(bfsOutput)
