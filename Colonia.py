@@ -12,6 +12,9 @@ class Colonia:
 
     def getRutas(self):
         return self.__rutas
+    
+    def getCostoRuta(self, destino):
+        return self.__rutas[destino]
 
     @staticmethod
     def cargarColonia(colonia):

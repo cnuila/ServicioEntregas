@@ -55,23 +55,17 @@ class Entrega:
         for estado in explorados:
             if estado == estadoBuscar:
                 return True
-        return False
-    
-    #función recursiva que agregar a la lista enviada las acciones de la ruta encontrada
-    def rutaEncontrada(self, nodo, recorrido):
-        if nodo != None:
-            recorrido.append(nodo.getAccion())
-            self.rutaEncontrada(nodo.getPadre(),recorrido)   
+        return False                
 
     #función que imprime el resultado encontrado si el costo está dentro del máximo
     def solucion(self, nodo):
-        if nodo.getCostoCamino() > self.__costoMaximo:
+        recorrido = []
+        costo = nodo.rutaEncontrada(self.__ciudad,recorrido)
+        if costo > self.__costoMaximo:
             print("Se encontró una ruta pero mayor al costo maximo ingresado")
             print("Costo maximo: ",self.__costoMaximo)
             print("Costo encontrado: ", nodo.getCostoCamino())
         else:
-            recorrido = []
-            self.rutaEncontrada(nodo, recorrido)
             recorrido.reverse()
             print("")
             print("")
@@ -81,7 +75,7 @@ class Entrega:
                 print(ruta)
             print("--------------------")
             print("Costo del Recorrido:")
-            print(nodo.getCostoCamino())
+            print(costo)
             print("")
             print("")
 

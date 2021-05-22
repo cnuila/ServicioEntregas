@@ -22,3 +22,15 @@ class NodoBusqueda:
 
     def getPadre(self):
         return self.__padre
+
+    #función recursiva que calcula el costo de una ruta (Especial A*) y agrega a la lista enviada las acciones de la ruta encontrada
+    def rutaEncontrada(self, ciudad, recorrido):
+        if self.__padre != None:
+            lugarA = self.__padre.getEstado().getNombreColoniaEstado()
+            lugarB = self.__estado.getNombreColoniaEstado()
+            coloniaA = ciudad.getColonia(lugarA)
+            recorrido.append(self.__accion)
+            print(coloniaA.getCostoRuta(lugarB))
+            return coloniaA.getCostoRuta(lugarB) + self.__padre.rutaEncontrada(ciudad, recorrido)  
+        else:
+            return 0          
