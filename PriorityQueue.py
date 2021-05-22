@@ -8,7 +8,7 @@ class PriotityQueue:
 
     def insertar(self, nodoInsertar):
         costoNodo = nodoInsertar.getCostoCamino()
-        indice = -1
+        indice = 0
         for nodo in self.__queue:
             if nodo.getCostoCamino() <= costoNodo:
                 indice+=1
@@ -20,7 +20,9 @@ class PriotityQueue:
             self.__queue.insert(indice,nodoInsertar)
     
     def pop(self):
+        retVal = self.__queue[0]
         del self.__queue[0]
+        return retVal     
 
     #función que busca si un estado ya se encuentra dentro de la priority queue y retorna el indice
     def seEncuentra(self, nodoBuscar):

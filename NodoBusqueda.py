@@ -16,3 +16,9 @@ class NodoBusqueda:
 
     def getEstado(self):
         return self.__estado
+    
+    def getAccion(self):
+        return self.__accion
+
+    def getPadre(self):
+        return self.__padre

@@ -7,8 +7,10 @@ class Estado():
         self.__coloniaEstado = coloniaEstado
         self.__listaColoniasFaltantes = listaColoniasFaltantes
     
+    #función que comprueba un estado meta si la colonia actual es la misma que la recibida
+    # y si la lista de colonias faltantes es menor
     def esEstadoMeta(self, destino):
-        if (self.__coloniaEstado == destino) and (len(self.__listaColoniasFaltantes) == 0):
+        if (self.__coloniaEstado.getNombre() == destino) and (len(self.__listaColoniasFaltantes) == 0):
             return True
         return False
 

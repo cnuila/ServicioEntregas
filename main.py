@@ -41,6 +41,8 @@ def main():
         opcion = menu()
         if opcion == 2:
             servicioEntregas.uniformCostSearch()
+        elif opcion == 3:
+            servicioEntregas.aEstrella()
             
 
 if __name__ == "__main__":
