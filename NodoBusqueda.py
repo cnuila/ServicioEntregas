@@ -30,7 +30,6 @@ class NodoBusqueda:
             lugarB = self.__estado.getNombreColoniaEstado()
             coloniaA = ciudad.getColonia(lugarA)
             recorrido.append(self.__accion)
-            print(coloniaA.getCostoRuta(lugarB))
             return coloniaA.getCostoRuta(lugarB) + self.__padre.rutaEncontrada(ciudad, recorrido)  
         else:
             return 0          

@@ -41,7 +41,11 @@ def main():
     while opcion != 4:        
         opcion = menu()
         if opcion == 1:
+            timeInicio = time.time()
             servicioEntregas.BFS()
+            timeFinal = time.time()
+            timeT = timeFinal - timeInicio
+            print("A la busqueda BFS le tomo %s segundos" % (timeT))
         if opcion == 2:
             timeInicio = time.time()
             servicioEntregas.uniformCostSearch()

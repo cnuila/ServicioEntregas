@@ -28,3 +28,6 @@ class Estado():
             if coloniaRemover != colonia:
                 nuevaLista.append(colonia)
         return nuevaLista
+    
+    def getColoniasFaltantes(self):
+        return self.__listaColoniasFaltantes
