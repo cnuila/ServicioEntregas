@@ -4,6 +4,8 @@ from Ciudad import Ciudad
 from NodoBusqueda import NodoBusqueda
 from Estado import Estado
 import json
+from queue import Queue
+
 
 class Entrega:
 
@@ -147,9 +149,9 @@ class Entrega:
                 
                 if (not self.seEncuentraExplorados(explorados, nodoHijo.getEstado())) or (seEncuentraFrontera == -1):
                     frontera.insertar(nodoHijo)
-                elif seEncuentraFrontera != -1:                     
-                    frontera.intercambiarMejorEstado(nodoHijo,seEncuentraFrontera)
-    
+                elif seEncuentraFrontera != -1:
+                    frontera.intercambiarMejorEstado(
+                        nodoHijo, seEncuentraFrontera)
+
     def BFS(self):
         pass
-
