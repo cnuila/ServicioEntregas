@@ -98,6 +98,8 @@ class Entrega:
             #se busca una solución
             if nodo.getEstado().esEstadoMeta(self.__coloniaInicial):
                 self.solucion(nodo)
+                print("Total de nodos explorados ",len(explorados))
+                print("Total de nodos descubiertos ", len(explorados) + frontera.size())
                 return
             
             explorados.add(nodo.getEstado())
@@ -131,6 +133,8 @@ class Entrega:
             #se busca una solución
             if nodo.getEstado().esEstadoMeta(self.__coloniaInicial):
                 self.solucion(nodo)
+                print("Total de nodos explorados ",len(explorados))
+                print("Total de nodos descubiertos ", len(explorados) + frontera.size())
                 return
 
             explorados.add(nodo.getEstado())

@@ -20,6 +20,8 @@ class Estado():
     def getNombreColoniaEstado(self):
         return self.__coloniaEstado.getNombre()
     
+    #función que remueve la colonia dada si se debe hacer entrega en ella 
+    # y devuelve las que faltan por hacer entregas
     def nuevasColoniasFaltantes(self, coloniaRemover):
         nuevaLista = []
         for colonia in self.__listaColoniasFaltantes:

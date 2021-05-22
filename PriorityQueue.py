@@ -1,7 +1,10 @@
+import queue
+
+
 class PriotityQueue:    
 
     def __init__(self):
-        self.__queue = []
+        self.__queue = []        
 
     def estaVacia(self):
         return len(self.__queue) == 0
@@ -37,3 +40,7 @@ class PriotityQueue:
         if nodoActual.getCostoCamino() > nodoComparar.getCostoCamino():
             del self.__queue[indice]
             self.insertar(nodoComparar)
+    
+    #función que retorna el size de la priority queue
+    def size(self):
+        return len(self.__queue)
