@@ -1,4 +1,4 @@
- class NodoBusqueda:
+class NodoBusqueda:
 
     __estado = None
     __padre = None
