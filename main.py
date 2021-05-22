@@ -1,5 +1,6 @@
 from Entrega import Entrega
 import sys
+import time
 
 def menu():
     print("-----------------------------------")
@@ -26,7 +27,7 @@ def crearEntrega():
             costoMaximo = float(dato.strip())
         else:
             lugaresEntregas.append(dato.strip())
-    return Entrega(ubicacionInicial, lugaresEntregas, costoMaximo)
+    return Entrega(ubicacionInicial, lugaresEntregas, costoMaximo)    
 
 def main():
     print("Mini proyecto Sistemas Inteligentes")
@@ -42,7 +43,17 @@ def main():
         if opcion == 1:
             servicioEntregas.BFS()
         if opcion == 2:
+            timeInicio = time.time()
             servicioEntregas.uniformCostSearch()
+            timeFinal = time.time()
+            timeT = timeFinal - timeInicio
+            print("A la busqueda de costo uniforme le tomo %s segundos" % (timeT))
+        elif opcion == 3:
+            timeInicio = time.time()
+            servicioEntregas.aEstrella()
+            timeFinal = time.time()
+            timeT = timeFinal - timeInicio
+            print("A la busqueda A* le tomo %s segundos" % (timeT))
             
 
 if __name__ == "__main__":

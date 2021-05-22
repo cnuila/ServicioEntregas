@@ -1,7 +1,6 @@
 Tiloarque
-10
-La Laguna
-El centro
+300
+El Prado
+Col. San Jose del Pedregal
 Miramontes
-La Miraflores
-El chiverito
+Morazan
